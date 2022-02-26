@@ -1,7 +1,7 @@
 {
   "name": "frontend-monorepo",
   "scripts": {
-    "bootstrap": "yarn workspaces foreach run install",
+    "bootstrap": "yarn workspaces foreach run ",
     "build": "yarn workspaces foreach run build"
   },
   "workspaces": {
@@ -11,7 +11,7 @@
     ]
   },
   "dependencies": {
-    "typescript": "^4.5.5"
+    "@yarnpkg/pnpify": "^3.1.1"
   },
   "packageManager": "yarn@3.2.0"
 }
