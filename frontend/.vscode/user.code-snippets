@@ -1,0 +1,16 @@
+{
+  "functionalComponent": {
+    "prefix": "fc",
+    "body": [
+      "",
+      "interface Props {",
+      "    ",
+      "}",
+      "",
+      "export default function ${TM_FILENAME/(.*)\\..+$/$1/}({ }: Props) {",
+      "    return ",
+      "}"
+    ],
+    "description": "Function Component"
+  }
+}
