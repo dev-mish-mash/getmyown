@@ -3,6 +3,7 @@ const intercept = require('intercept-stdout');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  pageExtensions: ['ts', 'tsx', 'mdx'],
 };
 
 const withMDX = require('@next/mdx')({
@@ -13,12 +14,8 @@ const withMDX = require('@next/mdx')({
     providerImportSource: '@mdx-js/react',
   },
 });
-module.exports = withMDX({
-  // Append the default value with md extensions
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-});
 
 /** prevent warnings from recoil */
 intercept((text) => (text.includes('Duplicate atom key') ? '' : text));
 
-module.exports = nextConfig;
+module.exports = withMDX(nextConfig);
