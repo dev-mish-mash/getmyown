@@ -52,7 +52,7 @@ export default function Header({}: Props) {
       <CustomAppbar position="fixed" className={!inPosition ? 'at-the-top' : ''}>
         <Container maxWidth="lg">
           <Toolbar variant="dense" style={{ lineHeight: '2' }}>
-            <Tooltip title="딴거보기" placement="left">
+            <Tooltip title="랜덤" placement="left">
               <CustomShuffleIcon
                 color="secondary"
                 style={{ position: 'relative', top: -2 }}
@@ -60,11 +60,9 @@ export default function Header({}: Props) {
               />
             </Tooltip>
             <Box sx={{ width: '1vw' }} />
-            <Tooltip title="재미있게 읽은 책들입니다." placement="right">
-              <Typography variant="h6" color="primary" noWrap>
-                {title}
-              </Typography>
-            </Tooltip>
+            <Typography variant="h6" color="primary" noWrap>
+              {title}
+            </Typography>
             <Box sx={{ flexGrow: 1 }} />
             <Button size="large" style={{ lineHeight: '1' }}>
               이력

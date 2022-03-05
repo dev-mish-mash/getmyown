@@ -1,3 +1,4 @@
+import { MDXProvider } from '@mdx-js/react';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import type { AppProps } from 'next/app';
@@ -9,11 +10,22 @@ import makeTheme, { ThemeType } from '../styles/theme';
 
 export default function App(props: AppProps) {
   return (
-    <RecoilRoot initializeState={({ set }) => set(themeAtom, 'light')}>
-      <ThemeWrapper {...props} />
-    </RecoilRoot>
+    <MDXProvider components={components}>
+      <RecoilRoot initializeState={({ set }) => set(themeAtom, 'light')}>
+        <ThemeWrapper {...props} />
+      </RecoilRoot>
+    </MDXProvider>
   );
 }
+
+const components = {
+  // img: ResponsiveImage,
+  // h1: Heading.H1,
+  // h2: Heading.H2,
+  // p: Text,
+  // pre: Pre,
+  // code: InlineCode,
+};
 
 const lightTheme = makeTheme('light');
 const darkTheme = makeTheme('dark');
